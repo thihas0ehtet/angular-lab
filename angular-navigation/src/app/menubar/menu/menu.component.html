@@ -1,0 +1,12 @@
+<div class="navbar">
+    <div  *ngFor="let item of _menus" class="dropdown">
+        <button *ngIf="item.id == ''" class="dropbtn" >{{ item.caption }}
+            <i class="fa fa-caret-down"></i>
+        </button>
+      <div class="dropdown-content">
+        <div *ngFor="let subitem of item.submenus" class="dropbtn" >
+            <a  (click)="goto(subitem.id)" *ngIf="subitem.id != ''">{{ subitem.caption }} </a>
+        </div>
+      </div>
+    </div> 
+</div>
